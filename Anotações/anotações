@@ -1,0 +1,2 @@
+server.port=${port:8081} inserindo esta chave no arquivo application.properties 
+muda a porta onde o  spring é inicializado
