@@ -1,2 +1,18 @@
 server.port=${port:8081} inserindo esta chave no arquivo application.properties 
-muda a porta onde o  spring é inicializado
+muda a porta onde o  spring é inicializado.
+
+	
+@RequestMapping(method= RequestMethod.GET) essa anotação pode ser substituida pelo método getMapping()
+
+A anotação @Document(collection = "nomeCustomizado")(-->  da tabela), define que a classe será 
+uma coleção no banco de dados mongo. Já a anotação  @Id indica o identificador único da 
+tabela/classes.
+
+Inserção no mongoDB complass:
+
+{
+  "nome": "Mari",
+  "email": "Mari@gmail.com"
+ }
+
+
