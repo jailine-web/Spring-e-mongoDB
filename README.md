@@ -12,6 +12,10 @@
 ### Spring web
 ### MongoDB
 
+### Modelo de domínio do projeto
+
+![Modelo de dominio projeto mongo e spring](https://github.com/jailine-web/Spring-e-mongoDB/assets/67970128/6804d4d8-d21e-45ad-9223-094032bc9301)
+
 ## Passos importantes 🛠️
 
 #### Ao terminar de baixar o mongoDb crie uma variavél de ambiente no usuário do sistema no campo path. 
