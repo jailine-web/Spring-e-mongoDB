@@ -12,7 +12,7 @@
 ### Spring web
 ### MongoDB
 
-## Passos importantes:
+## Passos importantes 🛠️
 
 #### Ao terminar de baixar o mongoDb crie uma variavél de ambiente no usuário do sistema no campo path. 
 #### Para isso insira o caminho da ferramenta atá a pasta bin no fim da variável path.
