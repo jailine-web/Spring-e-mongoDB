@@ -8,6 +8,17 @@ A anotação @Document(collection = "nomeCustomizado")(-->  da tabela), define q
 uma coleção no banco de dados mongo. Já a anotação  @Id indica o identificador único da 
 tabela/classes.
 
+Força a criação do banco no mongoDB
+
+@RequestMapping(method=RequestMethod.GET)
+public ResponseEntity<List<UsuarioDTO>> encontrarTodosUsuarios(){
+	
+	Usuario maria = new Usuario("1", "Maria Silva", "maria@gmail.com");
+	servico.salvarDados(maria);
+	...
+}
+
+
 Inserção no mongoDB complass:
 
 {
@@ -37,7 +48,7 @@ requisições.
 @ExceptionHandler(ObjetoNaoEncontradoExcecao.class) essa anotação é padrão do framework. Ela indica que 
 quando ocorrer o erro, passado entre parênteses, ele deverá ser tratado por essa classe/método.
 
-
+@RequestBody: Anotação para que o endpoint aceite o objeto passado.
 
 
 

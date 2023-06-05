@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.springMongo.DTO.UsuarioDTO;
 import com.springMongo.dominio.Usuario;
 import com.springMongo.excecao.ObjetoNaoEncontradoExcecao;
 import com.springMongo.repositories.UsuarioRepositorio;
@@ -28,6 +29,15 @@ public class UsuarioServico {
 		}
 		Usuario u1 = u.get();
 		return u1;
+	}
+	
+	public Usuario inserir(Usuario usuario) {
+		return repo.insert(usuario);
+	}
+	
+	public Usuario usuarioDto (UsuarioDTO usuarioDto) {
+		return new Usuario(usuarioDto.getId(), usuarioDto.getNome(),usuarioDto.getEmail());
+		
 	}
 	
 	public Usuario salvarDados(Usuario u) {

@@ -1,5 +1,6 @@
 package com.springMongo.resources;
 
+import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.springMongo.DTO.UsuarioDTO;
 import com.springMongo.dominio.Usuario;
@@ -26,17 +28,13 @@ public class UsuarioController {
 @RequestMapping(method=RequestMethod.GET)
 public ResponseEntity<List<UsuarioDTO>> encontrarTodosUsuarios(){
 	
-	//Usuario maria = new Usuario("1", "Maria Silva", "maria@gmail.com");
-	//Usuario alex = new Usuario("2", "Alex Santos", "alex@gmail.com");
-	
-	//servico.salvarDados(maria);
-	
 	List<Usuario> lista = servico.encontrarTodos();
 	List<UsuarioDTO> listaDTO = lista.stream().
 			map(x -> new UsuarioDTO(x)).collect(Collectors.toList());
 	return ResponseEntity.ok().body(listaDTO);
 	
 }
+
 @RequestMapping(value="/{id}",method=RequestMethod.GET)
 public ResponseEntity<UsuarioDTO> encontrarPorId(@PathVariable String id){
 	Usuario usuario = servico.buscarPorId(id);
@@ -45,11 +43,20 @@ public ResponseEntity<UsuarioDTO> encontrarPorId(@PathVariable String id){
 	
 }
 
+@RequestMapping(method=RequestMethod.POST)
+public ResponseEntity<Void> inserir(@RequestBody UsuarioDTO usuarioDto ){
+	Usuario usuario = servico.usuarioDto(usuarioDto);
+	usuario = servico.inserir(usuario);
+	URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+			.path("/{id}").buildAndExpand(usuario.getId()).toUri();
+	
+	return ResponseEntity.created(uri).build();
+}
 
-@PostMapping
+/*@PostMapping
 public Usuario salvarUsuario(@RequestBody Usuario u) {
 	return servico.salvarDados(u);
-}
+}*/
 	
 	
 }
