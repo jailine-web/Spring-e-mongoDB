@@ -44,4 +44,21 @@ public class UsuarioServico {
 		buscarPorId(id);
 		repo.deleteById(id);
 	}
+	
+	public Usuario atualizar(Usuario usuario) {
+		Optional<Usuario> usuarioNoBanco = repo.findById(usuario.getId());
+		atualizandoOsDados (usuarioNoBanco , usuario);
+		
+		Usuario usuarioAtualizado = usuarioNoBanco.get();
+		
+		return repo.save(usuarioAtualizado);
+	}
+
+	private void atualizandoOsDados(Optional<Usuario> usuarioNoBanco, Usuario usuario) {
+		
+		Usuario aux = usuarioNoBanco.get();
+		aux.setNome(usuario.getNome());
+		aux.setEmail(usuario.getEmail());
+		
+	}
 }

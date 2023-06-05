@@ -61,4 +61,13 @@ public ResponseEntity<Void> excluir(@PathVariable String id){
 	
 }
 
+@RequestMapping(value="/{id}",method=RequestMethod.PUT)
+public ResponseEntity<Void> atualizacao(@RequestBody UsuarioDTO usuarioDto, @PathVariable String id ){
+	Usuario usuario = servico.usuarioDto(usuarioDto);
+	usuario.setId(id);
+	
+	usuario = servico.atualizar(usuario);
+	return ResponseEntity.noContent().build();
+}	
+
 }
