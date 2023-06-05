@@ -51,12 +51,14 @@ public ResponseEntity<Void> inserir(@RequestBody UsuarioDTO usuarioDto ){
 			.path("/{id}").buildAndExpand(usuario.getId()).toUri();
 	
 	return ResponseEntity.created(uri).build();
+}	
+	
+@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
+public ResponseEntity<Void> excluir(@PathVariable String id){
+	servico.excluir(id);
+	
+	return ResponseEntity.noContent().build();
+	
 }
 
-/*@PostMapping
-public Usuario salvarUsuario(@RequestBody Usuario u) {
-	return servico.salvarDados(u);
-}*/
-	
-	
 }

@@ -40,7 +40,8 @@ public class UsuarioServico {
 		
 	}
 	
-	public Usuario salvarDados(Usuario u) {
-		return repo.save(u);
+	public void excluir(String id) {
+		buscarPorId(id);
+		repo.deleteById(id);
 	}
 }
