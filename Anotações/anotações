@@ -16,3 +16,19 @@ Inserção no mongoDB complass:
  }
 
 
+DTO(Data Transfer Object): é um objeto que tem o papel de carregar dados das entidades de forma simples 
+podendo inclusive "projetar" apenas alguns dados da entidade original.
+
+Vantagens:
+
+-Otimiza o trafégo (trafegando menos dados)
+
+-Evita que dados de interesse exclusivo do sistema fiquem sendo expostos (por exemplo: senhas,dados de 
+auditoria como data de criação e data de atualização do objeto, etc.)
+
+-Customiza os objetos trafegados conforme a necessidade de cada requisição (por exemplo: para alterar um 
+produto, você precisa dos dados A, B e C; já para listar os produtos, eu preciso dos dados A, B e a categoria 
+de cada produto, etc).
+
+
+
