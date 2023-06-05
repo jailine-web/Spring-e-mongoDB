@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +37,15 @@ public ResponseEntity<List<UsuarioDTO>> encontrarTodosUsuarios(){
 	return ResponseEntity.ok().body(listaDTO);
 	
 }
+@RequestMapping(value="/{id}",method=RequestMethod.GET)
+public ResponseEntity<UsuarioDTO> encontrarPorId(@PathVariable String id){
+	Usuario usuario = servico.buscarPorId(id);
+	
+	return ResponseEntity.ok().body(new UsuarioDTO(usuario));
+	
+}
+
+
 @PostMapping
 public Usuario salvarUsuario(@RequestBody Usuario u) {
 	return servico.salvarDados(u);

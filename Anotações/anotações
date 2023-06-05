@@ -26,9 +26,22 @@ Vantagens:
 -Evita que dados de interesse exclusivo do sistema fiquem sendo expostos (por exemplo: senhas,dados de 
 auditoria como data de criação e data de atualização do objeto, etc.)
 
--Customiza os objetos trafegados conforme a necessidade de cada requisição (por exemplo: para alterar um 
-produto, você precisa dos dados A, B e C; já para listar os produtos, eu preciso dos dados A, B e a categoria 
-de cada produto, etc).
+-Customiza os objetos trafegados conforme a necessidade de cada requisição (por exemplo: para alterar 
+um produto, você precisa dos dados A, B e C; já para listar os produtos, eu preciso dos dados A, B e a 
+categoria de cada produto, etc).
+
+
+@ControllerAdvice :: Anotação que indica que a classe será responsável por tratar possíveis erros nas 
+requisições.
+
+@ExceptionHandler(ObjetoNaoEncontradoExcecao.class) essa anotação é padrão do framework. Ela indica que 
+quando ocorrer o erro, passado entre parênteses, ele deverá ser tratado por essa classe/método.
+
+
+
+
+
+
 
 
 
