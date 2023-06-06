@@ -24,4 +24,4 @@
 ##### Para startar/iniciar o mongoDB no terminal basta abrir o cmd e digitar: mongod
 ##### Para para basta pressionar duas vezes o: ctrl + C
 
-#### As inserções do banco poderão ser visualizadas na ferramenta mongo compass, assim como todas as operações relacionadas ao banco de dados.
+##### As inserções do banco poderão ser visualizadas na ferramenta mongo compass, assim como todas as operações relacionadas ao banco de dados.
