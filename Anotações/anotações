@@ -51,7 +51,16 @@ quando ocorrer o erro, passado entre parênteses, ele deverá ser tratado por es
 @RequestBody: Anotação para que o endpoint aceite o objeto passado.
 
 
+@DBRef: anotação que referência outra coleção (apenas apresenta a referência de cada objeto)
 
+private AutorDTO autorDTO; --> Garante a cópia do objeto autorDTO/usuario para o documento Post 
+aninhando as os objetos.
+
+@DBRef(lazy =true): isso garante que a lista de posts só será carregada se solicitada e não 
+simutaneamente ao buscar os usuário, eliminando tráfego desnecessário na rede, vindo só os dados 
+básicos do usuário.
+
+public class Instanciacao implements CommandLineRunner // Classe que representa a carga inicial do banco
 
 
 

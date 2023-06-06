@@ -1,7 +1,6 @@
 package com.springMongo.dominio;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
@@ -20,7 +19,7 @@ public class Post implements Serializable{
 	private String titulo;
 	private String conteudo;
 	
-	private AutorDTO autorDTO; //Garante a cópia do objeto autorDTO/usuario para o documento Post
+	private AutorDTO autorDTO;
 	
 	public Post() {
 		

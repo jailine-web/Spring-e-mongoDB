@@ -44,6 +44,12 @@ public class Instanciacao implements CommandLineRunner{
 		
 		rp.saveAll(Arrays.asList(p1, p2));
 		
+		maria.getPosts().addAll(Arrays.asList(p1));
+		bob.getPosts().addAll(Arrays.asList(p2));
+		
+		usuarioRepositorio.save(maria);
+		usuarioRepositorio.save(bob);
+		
 	}
 
 }
