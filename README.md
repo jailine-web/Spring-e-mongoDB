@@ -14,7 +14,7 @@
 
 ### Modelo de domínio do projeto:
 
-![Modelo de dominio projeto mongo e spring](https://github.com/jailine-web/Spring-e-mongoDB/assets/67970128/6804d4d8-d21e-45ad-9223-094032bc9301)
+![Modelo de dominio projeto mongo e spring](https://github.com/jailine-web/Spring-e-mongoDB/assets/67970128/22abc59f-dbb3-4da7-ba43-1d9d677cfc01)
 
 ### Passos importantes 🛠️
 
