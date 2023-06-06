@@ -1,16 +1,18 @@
-## Oficina Spring com MongoDB ☕ 
+## Oficina Spring com MongoDB ☕ + 🍃
 
 ### Ferramentas utilizadas:
 
-#### Spring versão 3 ☕
+#### Spring versão 3 🍃
 #### Mongo community 🍃
 #### Mongo compass   🍃
 #### Maven           ✅
 #### Java versão 17  ☕
 
-## Dependencias: 📤
-### Spring web
-### MongoDB
+### Dependencias: 📤
+
+#### Spring web
+#### MongoDB
+#### Mongo Compass
 
 ### Modelo de domínio do projeto:
 
