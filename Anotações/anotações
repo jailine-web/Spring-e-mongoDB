@@ -62,6 +62,10 @@ básicos do usuário.
 
 public class Instanciacao implements CommandLineRunner // Classe que representa a carga inicial do banco
 
+Comando para encodar palavras no js:
+ex: encodeURIComponent("Bom dia");
+retorno:Bom%20dia
 
+Como realizar a requisição no postman: localhost:8080/posts/buscartitulo?texto=bom%20dia 
 
-
+texto é o nome do parâmetro especificado no método

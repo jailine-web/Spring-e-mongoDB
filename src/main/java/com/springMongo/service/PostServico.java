@@ -1,5 +1,6 @@
 package com.springMongo.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,10 @@ public class PostServico {
 		}
 		Post u1 = u.get();
 		return u1;
+	}
+	
+	public List<Post> buscandoPorTitulo(String texto){
+		return repo.findByTituloContainingIgnoreCase(texto);
 	}
 	
 }
