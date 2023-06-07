@@ -35,7 +35,7 @@ public ResponseEntity<Post> encontrarPorId(@PathVariable String id){
 public ResponseEntity<List<Post>> buscarTitulo(@RequestParam(value="texto", defaultValue = "") String texto){
 	
 	texto = URL.decodificador(texto); // decodifica o texto recebido
-	List<Post> lista = servico.buscandoPorTitulo(texto);
+	List<Post> lista = servico.buscandoTitulos(texto);
 		
 	return ResponseEntity.ok().body(lista);
 	

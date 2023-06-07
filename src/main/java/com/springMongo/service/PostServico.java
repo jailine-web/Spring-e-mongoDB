@@ -32,4 +32,8 @@ public class PostServico {
 		return repo.findByTituloContainingIgnoreCase(texto);
 	}
 	
+	public List<Post> buscandoTitulos(String texto){
+		return repo.pesquisarTitulos(texto);
+	}
+	
 }
