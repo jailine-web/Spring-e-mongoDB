@@ -1,12 +1,15 @@
 package com.springMongo.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.springMongo.DTO.AutorDTO;
+import com.springMongo.DTO.ComentarioDTO;
 
 @Document
 public class Post implements Serializable{
@@ -20,6 +23,8 @@ public class Post implements Serializable{
 	private String conteudo;
 	
 	private AutorDTO autorDTO;
+	
+	private List<ComentarioDTO> comentarios = new ArrayList<>();
 	
 	public Post() {
 		
@@ -72,6 +77,14 @@ public class Post implements Serializable{
 	public void setAutor(AutorDTO autorDTO) {
 		this.autorDTO = autorDTO;
 	}
+	
+	public List<ComentarioDTO> getComentarios() {
+		return comentarios;
+	}
+	
+	public void setComentarios(List<ComentarioDTO> comentarios) {
+		this.comentarios = comentarios;
+	}
 
 	@Override
 	public int hashCode() {
@@ -89,6 +102,7 @@ public class Post implements Serializable{
 		Post other = (Post) obj;
 		return Objects.equals(id, other.id);
 	}
+
 	
 	
 }
