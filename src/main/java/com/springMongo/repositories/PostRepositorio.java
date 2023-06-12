@@ -15,4 +15,8 @@ public interface PostRepositorio extends MongoRepository<Post, String>{
 	
 	public List<Post> findByTituloContainingIgnoreCase(String texto);
 	
+	@Query("{ $and: [ { data: {$gte: ?1 } }, { data: { $lte: ?2 } } , { $or: [ { 'titulo': { $regex: ?0, $options: 'i' } }, { 'conteudo': { $regex: ?0, $options: 'i' } }, { 'comentarios.texto': { $regex: ?0, $options: 'i' } } ] } ] }")
+	
+	public List<Post> pesquisaCompleta(String text, java.util.Date dataMin, java.util.Date dataMax);
+	
 }

@@ -36,4 +36,9 @@ public class PostServico {
 		return repo.pesquisarTitulos(texto);
 	}
 	
+	public List<Post> pesquisaCompleta(String texto, java.util.Date dataMin, java.util.Date dataMax){
+		dataMax = new java.util.Date(dataMax.getTime() + 24 * 60 * 1000); 
+		return repo.pesquisaCompleta(texto, dataMin, dataMax);
+	}
+	
 }

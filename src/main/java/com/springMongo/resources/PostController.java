@@ -41,4 +41,22 @@ public ResponseEntity<List<Post>> buscarTitulo(@RequestParam(value="texto", defa
 	
 }
 
+@RequestMapping(value="/buscacompleta", method=RequestMethod.GET)
+public ResponseEntity<List<Post>> buscaCompleta 
+		(@RequestParam(value="texto", defaultValue = "") String texto,
+		@RequestParam(value="dataMin", defaultValue = "") String dataMin,
+		@RequestParam(value="dataMax", defaultValue = "") String dataMax){
+	
+	texto = URL.decodificador(texto); // decodifica o texto recebido
+	
+	java.util.Date min = URL.convesaoDaData(dataMin, new java.util.Date(0L));
+	java.util.Date max = URL.convesaoDaData(dataMax, new java.util.Date(0L));
+	
+	
+	List<Post> lista = servico.pesquisaCompleta(texto, min, max);
+	
+	return ResponseEntity.ok().body(lista);
+	
+}
+
 }

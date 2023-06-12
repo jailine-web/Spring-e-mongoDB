@@ -69,3 +69,19 @@ retorno:Bom%20dia
 Como realizar a requisição no postman: localhost:8080/posts/buscartitulo?texto=bom%20dia 
 
 texto é o nome do parâmetro especificado no método
+
+
+A numeração ?1 ?2 ?3 corresponde ao indice de cada parâmetro:
+O texto é ?0
+O dataMin é o ?1 e 
+O dataMax é o ?2
+
+$gt: maior que
+$lt: menor que
+$gte: maior ou igual
+$lte:menor ou igual
+
+
+
+
+
